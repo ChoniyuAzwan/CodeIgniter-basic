@@ -10,17 +10,29 @@ class Crud extends CI_Controller {
 
 	}
 
-	// List all your items
-	public function index( $offset = 0 )
+	// List all your items 
+	public function index()
 	{
-		$data['content'] = $this->db->get('identitas')
-		$this->laod->view('crud/index', $data);
+		$data['content'] = $this->db->get('identitas');
+		$this->load->view('crud/index', $data);
 	}
 
 	// Add a new item
 	public function add()
 	{
+		$this->load->view('crud/add');
+	}
 
+	public function action_add()
+	{
+		$data = array(
+			'nama' => $this->input->post('nama'), 
+			'status' => $this->input->post('status'), 
+			'jurusan' => $this->input->post('jurusan') 
+		);
+
+		$this->db->insert('identitas', $data);
+		redirect('index.php/crud','refresh');
 	}
 
 	//Update one item
@@ -32,7 +44,10 @@ class Crud extends CI_Controller {
 	//Delete one item
 	public function delete( $id = NULL )
 	{
+		$this->db->where('id', $id);
+		$this->db->delete('identitas');
 
+		redirect('index.php/crud','refresh');
 	}
 }
 
