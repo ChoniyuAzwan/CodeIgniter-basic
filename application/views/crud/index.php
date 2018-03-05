@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
+	<a href="<?php echo base_url(); ?>index.php/crud/">Home</a>
 	<a href="<?php echo base_url(); ?>index.php/crud/add">Create</a>
 	<table border="2">
 		<tr>
@@ -22,7 +23,11 @@
 				<td><?php echo $key['nama'] ?></td>
 				<td><?php echo $key['status'] ?></td>
 				<td><?php echo $key['jurusan'] ?></td>
-				<td><a href="<?php echo base_url() ?>index.php/crud/delete/<?php echo $key['id'] ?>">Delete</a></td>
+				<td>
+					<a href="<?php echo base_url() ?>index.php/crud/read/<?php echo $key['id'] ?>">Read</a> |
+					<a href="<?php echo base_url() ?>index.php/crud/update/<?php echo $key['id'] ?>">Edit</a> |
+					<a href="<?php echo base_url() ?>index.php/crud/delete/<?php echo $key['id'] ?>">Delete</a>
+				</td>
 			</tr>
 		<?php endforeach ?>
 		

@@ -9,9 +9,9 @@
 <body>
 	<h2>Input Data</h2>
     <form action="<?php echo base_url(); ?>index.php/crud/action_add" method="post">
-        <input type="text" name="nama" placeholder"Masukkan Nama"> <br>
-        <input type="text" name="status" placeholder"Masukkan Nama"> <br>
-        <input type="text" name="jurusan" placeholder"Masukkan Nama"> <br><br>
+        <input type="text" name="nama" placeholder"Masukkan nama"> <br>
+        <input type="text" name="status" placeholder"Masukkan status"> <br>
+        <input type="text" name="jurusan" placeholder"Masukkan jurusan"> <br><br>
         <input type="submit" value="Save">
     </form>
 </body>
